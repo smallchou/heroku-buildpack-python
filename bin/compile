@@ -206,6 +206,7 @@ fi
 
 # Install dependencies with Pip.
 puts-step "Installing dependencies using pip version $(pip --version | awk '{print $2}')"
+pip install distribute==0.6.28
 pip install --use-mirrors -r requirements.txt --exists-action=w --src=./.heroku/src | indent
 
 # Do additional application hackery if applications appears to be a Django app.
